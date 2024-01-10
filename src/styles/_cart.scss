@@ -1,0 +1,120 @@
+@import "../styles/mixin";
+
+.cart {
+  padding: 2rem 4rem;
+  @include flexbox($justify-content: space-between, $gap: 4rem);
+
+  .cartProducts {
+    flex: 2;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .cartPrices {
+    flex: 1;
+    padding: 4rem;
+    @include flexbox($direction: column, $gap: 1.5rem);
+
+    .cartItemPrices {
+      font-size: larger;
+      font-weight: 400;
+    }
+
+    .totalPrice {
+      font-weight: 500;
+    }
+
+    .couponField {
+      @include flexbox($gap: 2rem);
+
+      .couponInput {
+        padding: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        outline: none;
+        border-radius: 0.25rem;
+        width: 15rem;
+      }
+    }
+
+    .checkout-button {
+      padding: 0.5rem;
+      background-color: var(--primary-2);
+      text-decoration: none;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 0.25rem;
+      text-align: center;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .couponText {
+      margin-top: -1rem;
+      @include flexbox($align-items: center, $gap: 0.25rem);
+    }
+  }
+
+  .cartItem {
+    padding: 2rem;
+    @include flexbox($align-items: center, $justify-content: space-between);
+
+    .productSection {
+      @include flexbox($align-items: center, $gap: 3rem);
+
+      .itemImage {
+        @include square(8rem);
+        object-fit: contain;
+      }
+
+      .itemArticle {
+        @include flexbox($direction: column, $gap: 0.25rem);
+
+        .itemName {
+          color: var(--primary-1);
+
+          &:hover {
+            color: var(--primary-2);
+          }
+        }
+
+        .itemPrice {
+            font-weight: 700;
+        }
+      }
+    }
+
+    .productActions {
+      @include flexbox($align-items: center, $gap: 2rem);
+
+      .quantityActions {
+        @include flex;
+
+        button {
+            @include square(1.5rem);
+            border-radius: 0.25rem;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                color: white;
+                background-color: var(--primary-2);
+            }
+        }
+      }
+
+      .deleteAction {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+      }
+    }
+  }
+}

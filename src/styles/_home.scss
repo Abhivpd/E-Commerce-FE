@@ -1,0 +1,29 @@
+@import "../styles/mixin";
+@import "../styles/product";
+
+.home {
+  @include flexbox($direction: column, $gap: 2rem);
+  padding: 2rem;
+
+  .coverSection {
+    height: 15rem;
+    background: url("../assets/images/cover.jpg") no-repeat center / cover;
+  }
+
+  .productSectionHeaders {
+    @include flexbox($direction: row, $justify-content: space-between);
+
+    h3,
+    .findMore {
+      @include heading(1px);
+    }
+
+    .findMore {
+      font-size: 1rem;
+    }
+  }
+
+  .latestProductsContainer {
+    @include flexbox($gap: 1rem);
+  }
+}

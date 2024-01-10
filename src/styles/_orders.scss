@@ -1,0 +1,10 @@
+@import "../styles/mixin";
+
+.orders {
+  padding: 2rem;
+
+  h3 {
+    @include heading;
+    text-align: center;
+  }
+}
